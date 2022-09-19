@@ -1,10 +1,10 @@
 const Model = require('../models/index');
 const { MaryAppointment } = Model;
 require('dotenv').config();
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const from = process.env.FROM_PHONE;
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const from = process.env.FROM_PHONE;
+// const client = require('twilio')(accountSid, authToken);
 
 
 const maryAppointmentController = {
@@ -52,13 +52,13 @@ const maryAppointmentController = {
                 :
                 `Hola ${name}, este mensaje es para confirmar tu cita en Mary's Beauty Salon el ${date} a las ${time} con ${staff}. Nos miramos pronto.`
 
-            client.messages
-                .create({
-                    body: `${msg}`,
-                    to: `+1${to.toString()}`, // Text this number
-                    from: `${from}`, // From a valid Twilio number
-                })
-                .then((message) => console.log(message.sid));
+            // client.messages
+            //     .create({
+            //         body: `${msg}`,
+            //         to: `+1${to.toString()}`, // Text this number
+            //         from: `${from}`, // From a valid Twilio number
+            //     })
+            //     .then((message) => console.log(message.sid));
         });
     },
 
