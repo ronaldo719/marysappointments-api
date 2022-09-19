@@ -1,9 +1,9 @@
 const Model = require('../models/index');
 const { OlgaAppointment } = Model;
 require('dotenv').config();
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const from = process.env.FROM_PHONE;
+const accountSid = "AC07ff0b44eeb659ef5081820560b057a0";
+const authToken = "4ab58eda6da5bdcdeacd6e3732aa2367";
+const from = "+19064482099";
 const client = require('twilio')(accountSid, authToken);
 const moment = require('moment');
 
