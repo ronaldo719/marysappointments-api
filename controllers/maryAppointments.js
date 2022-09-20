@@ -48,9 +48,9 @@ const maryAppointmentController = {
                 .exec((err, appointment) => res.json(appointment));
 
             const msg = language === "english" ?
-                `Hello ${name}, this message is to confirm your appointment at Mary's Beauty Salon on ${date} at ${time} with ${staff}. Looking forward to seeing you.`
+                `Hello ${name}, this message is to confirm your appointment at Mary's Beauty Salon on ${moment(date).format('l')} at ${time} with ${staff}. Looking forward to seeing you. If you woukld like to cancel your appointment. Follow the directions here: http://localhost:3000/delete`
                 :
-                `Hola ${name}, este mensaje es para confirmar tu cita en Mary's Beauty Salon el ${date} a las ${time} con ${staff}. Nos miramos pronto.`
+                `Hola ${name}, este mensaje es para confirmar tu cita en Mary's Beauty Salon el ${moment(date).format('l')} a las ${time} con ${staff}. Nos miramos pronto. Si desea cancelar su cita. Siga las instrucciones aquí: http://localhost:3000/delete`
 
             client.messages
                 .create({
