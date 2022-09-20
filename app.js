@@ -10,7 +10,7 @@ const scheduler = require('./scheduler');
 var index = require('./routes/index');
 const api = require('./routes/api/index');
 const cors = require('cors');
-// const mongooseConnect = process.env.MONGOOSE_CONNECTION;
+const mongooseConnect = process.env.MONGOOSE_CONNECTION;
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.use(cors());
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect(`mongodb+srv://ronaldo719:cookie719@appointments.wlmp2jt.mongodb.net/?retryWrites=true&w=majority`);
+mongoose.connect(`${mongooseConnect}`);
 
 //This enabled CORS, Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) 
 //on a web page to be requested from another domain outside the domain from which the first resource was served
